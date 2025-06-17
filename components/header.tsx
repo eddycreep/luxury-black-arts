@@ -30,16 +30,16 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#services" className="text-gray-700 hover:text-[#D94343] transition-colors">
+            <Link href="#services" className="text-gray-700 hover:text-green-600 transition-colors">
               Services
             </Link>
-            <Link href="#about" className="text-gray-700 hover:text-[#D94343] transition-colors">
+            <Link href="#about" className="text-gray-700 hover:text-green-600 transition-colors">
               About
             </Link>
-            <Link href="#contact" className="text-gray-700 hover:text-[#D94343] transition-colors">
+            <Link href="#contact" className="text-gray-700 hover:text-green-600 transition-colors">
               Contact
             </Link>
-            <Button className="bg-[#D94343] hover:bg-[#c22727] text-white">Get Quote</Button>
+            <Button className="bg-green-600 hover:bg-green-700 text-white">Get Quote</Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -52,16 +52,16 @@ export function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col space-y-4">
-              <Link href="#services" className="text-gray-700 hover:text-[#D94343] transition-colors">
+              <Link href="#services" className="text-gray-700 hover:text-green-600 transition-colors">
                 Services
               </Link>
-              <Link href="#about" className="text-gray-700 hover:text-[#D94343] transition-colors">
+              <Link href="#about" className="text-gray-700 hover:text-green-600 transition-colors">
                 About
               </Link>
-              <Link href="#contact" className="text-gray-700 hover:text-[#D94343] transition-colors">
+              <Link href="#contact" className="text-gray-700 hover:text-green-600 transition-colors">
                 Contact
               </Link>
-              <Button className="bg-[#D94343] hover:bg-[#c22727] text-white w-full">Get Quote</Button>
+              <Button className="bg-green-600 hover:bg-green-700 text-white w-full">Get Quote</Button>
             </nav>
           </div>
         )}

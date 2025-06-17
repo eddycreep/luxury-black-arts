@@ -35,7 +35,7 @@ export function AboutSection() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Why Choose <span className="text-[#D94343]">Household Heroes?</span>
+                Why Choose <span className="text-green-600">Household Heroes?</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 As part of CC Corporation, we bring years of experience and a commitment to excellence in every service
@@ -47,7 +47,7 @@ export function AboutSection() {
             <div className="grid sm:grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
-                  <div className="bg-[#D94343] rounded-lg p-2 flex-shrink-0">
+                  <div className="bg-green-600 rounded-lg p-2 flex-shrink-0">
                     <feature.icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -58,7 +58,7 @@ export function AboutSection() {
               ))}
             </div>
 
-            <Button size="lg" className="bg-[#D94343] hover:bg-[#c22727] text-white">
+            <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
               Learn More About Us
             </Button>
           </div>
@@ -74,15 +74,15 @@ export function AboutSection() {
             <div className="absolute bottom-6 left-6 right-6 bg-white rounded-xl p-6 shadow-lg">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-[#D94343]">5+</div>
+                  <div className="text-2xl font-bold text-green-600">5+</div>
                   <div className="text-xs text-gray-600">Years Experience</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#D94343]">500+</div>
+                  <div className="text-2xl font-bold text-green-600">500+</div>
                   <div className="text-xs text-gray-600">Happy Clients</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#D94343]">24/7</div>
+                  <div className="text-2xl font-bold text-green-600">24/7</div>
                   <div className="text-xs text-gray-600">Support</div>
                 </div>
               </div>

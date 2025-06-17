@@ -37,7 +37,7 @@ export function TestimonialsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            What Our <span className="text-[#D94343]">Families</span> Say
+            What Our <span className="text-green-600">Families</span> Say
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it - hear from the families who trust Household Heroes with their most
@@ -57,7 +57,7 @@ export function TestimonialsSection() {
                     alt={`${testimonial.service} service`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4 bg-white rounded-full px-3 py-1 text-sm font-medium text-[#D94343]">
+                  <div className="absolute top-4 left-4 bg-white rounded-full px-3 py-1 text-sm font-medium text-green-600">
                     {testimonial.service}
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export function TestimonialsSection() {
 
                   {/* Quote */}
                   <div className="relative mb-4">
-                    <Quote className="w-6 h-6 text-[#D94343] opacity-50 absolute -top-2 -left-1" />
+                    <Quote className="w-6 h-6 text-green-600 opacity-50 absolute -top-2 -left-1" />
                     <p className="text-gray-600 italic pl-6 leading-relaxed">{testimonial.text}</p>
                   </div>
 

@@ -9,7 +9,7 @@ const services = [
     icon: Scissors,
     title: "Yard Cleaning",
     description: "Complete front and backyard maintenance including mowing, trimming, and debris removal.",
-    price: "Starting at $45",
+    price: "Starting at R45",
     color: "bg-green-100 text-green-600",
     image: "/images/water-hoes.jpg",
     imageAlt: "Professional pressure washing patio cleaning service",
@@ -18,7 +18,7 @@ const services = [
     icon: Baby,
     title: "Babysitting",
     description: "Trusted and experienced childcare services for your peace of mind.",
-    price: "Starting at $15/hr",
+    price: "Starting at R15/hr",
     color: "bg-blue-100 text-blue-600",
     image: "/images/baby-sitting.jpg",
     imageAlt: "Professional babysitter with child",
@@ -27,7 +27,7 @@ const services = [
     icon: PawPrint,
     title: "Pet Sitting",
     description: "Loving care for your furry friends when you're away from home.",
-    price: "Starting at $20/day",
+    price: "Starting at R20/day",
     color: "bg-purple-100 text-purple-600",
     image: "/images/pet-sitting.jpg",
     imageAlt: "Professional pet sitter with dog",
@@ -36,7 +36,7 @@ const services = [
     icon: Car,
     title: "Light Errands",
     description: "Grocery runs, package pickup, and other helpful household errands.",
-    price: "Starting at $25",
+    price: "Starting at R25",
     color: "bg-orange-100 text-orange-600",
     image: "/images/household-support.jpg",
     imageAlt: "Professional household support services",
@@ -45,7 +45,7 @@ const services = [
     icon: Droplets,
     title: "Plant Watering",
     description: "Keep your garden thriving with our plant care and watering services.",
-    price: "Starting at $15",
+    price: "Starting at R15",
     color: "bg-teal-100 text-teal-600",
     image: "/images/sweep.jpg",
     imageAlt: "Garden and plant care services",
@@ -68,7 +68,7 @@ export function ServicesSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-[#D94343]">Services</span>
+            Our <span className="text-green-600">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             From yard maintenance to childcare, we provide comprehensive household support services you can trust.
@@ -102,8 +102,8 @@ export function ServicesSection() {
                 <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-semibold text-[#D94343]">{service.price}</span>
-                  <Button variant="ghost" size="sm" className="text-[#D94343] hover:bg-[#D94343] hover:text-white">
+                  <span className="text-lg font-semibold text-green-600">{service.price}</span>
+                  <Button variant="ghost" size="sm" className="text-green-600 hover:bg-green-600 hover:text-white">
                     Learn More
                   </Button>
                 </div>

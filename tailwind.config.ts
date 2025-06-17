@@ -20,13 +20,13 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // CC Corporation Brand Colors
-        "cc-red": {
-          DEFAULT: "#D94343",
-          light: "#e26d6d",
-          dark: "#c22727",
+        // CC Corporation Brand Colors - Updated to Green
+        "cc-green": {
+          DEFAULT: "#22c55e", // green-500
+          light: "#4ade80", // green-400
+          dark: "#16a34a", // green-600
         },
-        // Household Heroes Accent Green
+        // Household Heroes Primary Green
         "hh-green": {
           50: "#f0fdf4",
           100: "#dcfce7",

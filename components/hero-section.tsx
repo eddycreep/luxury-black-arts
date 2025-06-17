@@ -23,7 +23,7 @@ export function HeroSection() {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Your Home, <span className="text-[#D94343]">Our Care</span>
+                Your Home, <span className="text-green-600">Our Care</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Professional yard cleaning and trusted home support services. From pristine lawns to reliable
@@ -33,14 +33,14 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#D94343] hover:bg-[#c22727] text-white px-8 py-4 text-lg group">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg group">
                 Get a Yard Quote
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-[#D94343] text-[#D94343] hover:bg-[#D94343] hover:text-white px-8 py-4 text-lg"
+                className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 text-lg"
               >
                 View All Services
               </Button>
