@@ -2,14 +2,15 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Scissors, Baby, Heart, Droplets, Car, PawPrint } from "lucide-react"
+import { Scissors, Baby, Heart, Droplets, Car, Home } from "lucide-react"
 
 const services = [
   {
     icon: Scissors,
     title: "Yard Cleaning",
     description: "Complete front and backyard maintenance including mowing, trimming, and debris removal.",
-    price: "Starting at R45",
+    dailyPrice: "R300–R400",
+    monthlyPrice: "R1,000–R1,600 (4 visits)",
     color: "bg-green-100 text-green-600",
     image: "/images/water-hoes.jpg",
     imageAlt: "Professional pressure washing patio cleaning service",
@@ -18,43 +19,48 @@ const services = [
     icon: Baby,
     title: "Babysitting",
     description: "Trusted and experienced childcare services for your peace of mind.",
-    price: "Starting at R15/hr",
+    dailyPrice: "R400–R700",
+    monthlyPrice: "R2,000–R4,000 (2–3 days/wk)",
     color: "bg-blue-100 text-blue-600",
     image: "/images/baby-sitting.jpg",
     imageAlt: "Professional babysitter with child",
   },
   {
-    icon: PawPrint,
-    title: "Pet Sitting",
-    description: "Loving care for your furry friends when you're away from home.",
-    price: "Starting at R20/day",
+    icon: Home,
+    title: "House Sitting",
+    description: "Comprehensive home security and maintenance while you're away.",
+    dailyPrice: "R300–R500",
+    monthlyPrice: "R7,000–R10,000 (full-time)",
     color: "bg-purple-100 text-purple-600",
     image: "/images/pet-sitting.jpg",
-    imageAlt: "Professional pet sitter with dog",
+    imageAlt: "Professional house sitting service",
   },
   {
     icon: Car,
     title: "Light Errands",
     description: "Grocery runs, package pickup, and other helpful household errands.",
-    price: "Starting at R25",
+    dailyPrice: "Starting at R25",
+    monthlyPrice: "Custom pricing",
     color: "bg-orange-100 text-orange-600",
-    image: "/images/household-support.jpg",
-    imageAlt: "Professional household support services",
+    image: "/images/light-errand.jpg",
+    imageAlt: "Professional grocery shopping and light errands service",
   },
   {
     icon: Droplets,
     title: "Plant Watering",
     description: "Keep your garden thriving with our plant care and watering services.",
-    price: "Starting at R15",
+    dailyPrice: "Starting at R15",
+    monthlyPrice: "Custom pricing",
     color: "bg-teal-100 text-teal-600",
-    image: "/images/sweep.jpg",
-    imageAlt: "Garden and plant care services",
+    image: "/images/plant-watering.jpg",
+    imageAlt: "Professional plant watering and garden care services",
   },
   {
     icon: Heart,
     title: "Home Support",
     description: "Additional household assistance tailored to your family's needs.",
-    price: "Custom pricing",
+    dailyPrice: "Custom pricing",
+    monthlyPrice: "Custom pricing",
     color: "bg-pink-100 text-pink-600",
     image: "/images/household-support.jpg",
     imageAlt: "Comprehensive home support services",
@@ -101,12 +107,20 @@ export function ServicesSection() {
 
                 <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-lg font-semibold text-green-600">{service.price}</span>
-                  <Button variant="ghost" size="sm" className="text-green-600 hover:bg-green-600 hover:text-white">
-                    Learn More
-                  </Button>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">Daily:</span>
+                    <span className="text-lg font-semibold text-green-600">{service.dailyPrice}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">Monthly:</span>
+                    <span className="text-sm font-medium text-gray-700">{service.monthlyPrice}</span>
+                  </div>
                 </div>
+
+                <Button variant="ghost" size="sm" className="w-full text-green-600 hover:bg-green-600 hover:text-white">
+                  Learn More
+                </Button>
               </CardContent>
             </Card>
           ))}

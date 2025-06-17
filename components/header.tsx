@@ -15,13 +15,7 @@ export function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo and Brand */}
           <div className="flex items-center space-x-3">
-            <Image
-              src="/images/cc-logo-no-texts.png"
-              alt="CC Corporation Logo"
-              width={40}
-              height={40}
-              className="w-10 h-10"
-            />
+            <Image src="/images/logo.png" alt="Household Heroes Logo" width={40} height={40} className="w-10 h-10" />
             <div>
               <h1 className="text-xl font-bold text-gray-900">Household Heroes</h1>
               <p className="text-xs text-gray-500">A CC Corporation Service</p>
