@@ -99,18 +99,18 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-green-600" />
-                <span className="text-gray-600">(555) 123-4567</span>
+                <span className="text-gray-600">065 842 1416</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-green-600" />
-                <span className="text-gray-600">hello@householdheroes.com</span>
+                <span className="text-gray-600">whires44@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-green-600 mt-0.5" />
                 <span className="text-gray-600">
-                  123 Service Street
+                  32 Dukes Avenue, 3 Danthrope
                   <br />
-                  Your City, ST 12345
+                  Johannessbug, 2194
                 </span>
               </div>
             </div>
