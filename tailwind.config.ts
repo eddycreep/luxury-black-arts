@@ -20,13 +20,13 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // CC Corporation Brand Colors - Updated to Green
+        // Reverted to warm, light green theme for calm and natural feel
         "cc-green": {
           DEFAULT: "#22c55e", // green-500
           light: "#4ade80", // green-400
           dark: "#16a34a", // green-600
         },
-        // Household Heroes Primary Green
+        // Household Heroes Primary Warm Green
         "hh-green": {
           50: "#f0fdf4",
           100: "#dcfce7",
@@ -87,10 +87,36 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        // Enhanced animations for dynamic services section
+        "slide-in-left": {
+          from: { opacity: "0", transform: "translateX(-50px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "slide-in-right": {
+          from: { opacity: "0", transform: "translateX(50px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "slide-in-up": {
+          from: { opacity: "0", transform: "translateY(50px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "scale-in": {
+          from: { opacity: "0", transform: "scale(0.95)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-in-left": "slide-in-left 0.8s ease-out forwards",
+        "slide-in-right": "slide-in-right 0.8s ease-out forwards",
+        "slide-in-up": "slide-in-up 0.8s ease-out forwards",
+        "fade-in": "fade-in 0.5s ease-out forwards",
+        "scale-in": "scale-in 0.3s ease-out forwards",
       },
     },
   },

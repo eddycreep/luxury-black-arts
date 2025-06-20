@@ -31,8 +31,8 @@ export function AboutSection() {
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
+          {/* Left Content with slide-in animation */}
+          <div className="space-y-8 animate-slide-in-left">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 Why Choose <span className="text-green-600">Household Heroes?</span>
@@ -63,8 +63,8 @@ export function AboutSection() {
             </Button>
           </div>
 
-          {/* Right Content - Image */}
-          <div className="relative">
+          {/* Right Content - Image with slide-in animation */}
+          <div className="relative animate-slide-in-right">
             <img
               src="/images/household-support.jpg"
               alt="Household Heroes professional team providing home support services"

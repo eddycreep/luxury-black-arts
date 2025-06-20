@@ -4,6 +4,7 @@ import { ServicesSection } from "@/components/services-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { AboutSection } from "@/components/about-section"
 import { CTASection } from "@/components/cta-section"
+import { CareersSection } from "@/components/careers-section"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
@@ -26,6 +27,9 @@ export default function HomePage() {
 
       {/* Call to Action Section */}
       <CTASection />
+
+      {/* New Careers Section */}
+      <CareersSection />
 
       {/* Footer */}
       <Footer />

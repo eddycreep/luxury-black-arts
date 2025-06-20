@@ -34,8 +34,8 @@ export function TestimonialsSection() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        {/* Section Header with slide-in animation */}
+        <div className="text-center mb-16 animate-slide-in-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             What Our <span className="text-green-600">Families</span> Say
           </h2>
@@ -45,10 +45,14 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Grid with staggered animations */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+            <Card
+              key={index}
+              className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg animate-slide-in-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
               <CardContent className="p-0">
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
