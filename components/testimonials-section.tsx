@@ -54,15 +54,23 @@ export function TestimonialsSection() {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <CardContent className="p-0">
-                {/* Service Image */}
+                {/* Service Image with glassmorphism */}
                 <div className="relative h-48 overflow-hidden rounded-t-lg">
+                  {/* Glassmorphism frame around image */}
+                  <div className="absolute -inset-1 bg-white/10 backdrop-blur-sm rounded-t-xl border border-white/20 shadow-lg z-10"></div>
+
                   <img
                     src={testimonial.image || "/placeholder.svg"}
                     alt={`${testimonial.service} service`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-t-lg"
                   />
-                  <div className="absolute top-4 left-4 bg-white rounded-full px-3 py-1 text-sm font-medium text-green-600">
-                    {testimonial.service}
+
+                  {/* Service badge with glassmorphism */}
+                  <div className="absolute top-4 left-4">
+                    <div className="absolute -inset-1 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 shadow-lg"></div>
+                    <div className="relative bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium text-green-600 border border-white/20">
+                      {testimonial.service}
+                    </div>
                   </div>
                 </div>
 

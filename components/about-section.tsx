@@ -63,27 +63,35 @@ export function AboutSection() {
             </Button>
           </div>
 
-          {/* Right Content - Image with slide-in animation */}
+          {/* Right Content - Image with enhanced glassmorphism */}
           <div className="relative animate-slide-in-right">
+            {/* Glassmorphism frame around main image */}
+            <div className="absolute -inset-4 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 shadow-2xl"></div>
+
             <img
               src="/images/household-support.jpg"
               alt="Household Heroes professional team providing home support services"
-              className="w-full h-auto rounded-2xl shadow-xl object-cover"
+              className="relative w-full h-auto rounded-2xl shadow-xl object-cover border border-white/20"
             />
-            {/* Stats Overlay */}
-            <div className="absolute bottom-6 left-6 right-6 bg-white rounded-xl p-6 shadow-lg">
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-green-600">5+</div>
-                  <div className="text-xs text-gray-600">Years Experience</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-green-600">500+</div>
-                  <div className="text-xs text-gray-600">Happy Clients</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-green-600">24/7</div>
-                  <div className="text-xs text-gray-600">Support</div>
+
+            {/* Stats Overlay with enhanced glassmorphism */}
+            <div className="absolute bottom-6 left-6 right-6">
+              {/* Glassmorphism frame for stats */}
+              <div className="absolute -inset-2 bg-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-xl"></div>
+              <div className="relative bg-white/90 backdrop-blur-xl rounded-xl p-6 shadow-lg border border-white/20">
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-green-600">5+</div>
+                    <div className="text-xs text-gray-600">Years Experience</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-green-600">500+</div>
+                    <div className="text-xs text-gray-600">Happy Clients</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-green-600">24/7</div>
+                    <div className="text-xs text-gray-600">Support</div>
+                  </div>
                 </div>
               </div>
             </div>
