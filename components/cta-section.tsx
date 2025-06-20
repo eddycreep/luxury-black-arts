@@ -123,13 +123,10 @@ export function CTASection() {
               </div>
             </div>
 
-            {/* Right Content - Updated with enhanced glassmorphism */}
+            {/* Right Content - Updated with provided family image and slide-in animation */}
             <div className="relative animate-slide-in-right">
-              {/* Glassmorphism frame around main image */}
-              <div className="absolute -inset-4 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl"></div>
-
               {/* Main image container */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/household-heroes.jpg-Rh2CgysYDvX38FMfxK7NG22XDgz123.jpeg"
                   alt="Happy family with father and children using tablet together at home - representing trust and family values"
@@ -138,27 +135,18 @@ export function CTASection() {
                 {/* Image overlay for better text contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
-                {/* Floating badge on image with glassmorphism */}
-                <div className="absolute top-6 left-6">
-                  <div className="absolute -inset-1 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 shadow-lg"></div>
-                  <div className="relative bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg border border-white/20">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-green-700 font-semibold text-sm">Trusted by Families</span>
-                    </div>
+                {/* Floating badge on image */}
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-green-700 font-semibold text-sm">Trusted by Families</span>
                   </div>
                 </div>
               </div>
 
-              {/* Decorative elements with glassmorphism */}
-              <div className="absolute -top-4 -right-4">
-                <div className="absolute -inset-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 shadow-lg"></div>
-                <div className="relative w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"></div>
-              </div>
-              <div className="absolute -bottom-6 -left-6">
-                <div className="absolute -inset-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 shadow-lg"></div>
-                <div className="relative w-32 h-32 bg-white/5 backdrop-blur-sm rounded-full border border-white/20"></div>
-              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full backdrop-blur-sm"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/5 rounded-full backdrop-blur-sm"></div>
             </div>
           </div>
         </div>

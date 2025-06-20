@@ -112,34 +112,25 @@ export function ServicesSection() {
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
             >
-              {/* Service Image with glassmorphism */}
+              {/* Service Image */}
               <div className="relative h-48 overflow-hidden">
-                {/* Glassmorphism frame around image */}
-                <div className="absolute -inset-1 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg z-10"></div>
-
                 <img
                   src={service.image || "/placeholder.svg"}
                   alt={service.imageAlt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 rounded-lg"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
 
-                {/* Price Badge with glassmorphism */}
-                <div className="absolute top-4 right-4">
-                  <div className="absolute -inset-1 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 shadow-lg"></div>
-                  <div className="relative bg-green-600/90 backdrop-blur-sm text-white rounded-full px-3 py-1 text-sm font-bold border border-white/20">
-                    {service.dailyPrice}
-                  </div>
+                {/* Price Badge */}
+                <div className="absolute top-4 right-4 bg-green-600 text-white rounded-full px-3 py-1 text-sm font-bold">
+                  {service.dailyPrice}
                 </div>
 
-                {/* Service Icon with glassmorphism */}
-                <div className="absolute bottom-4 left-4">
-                  <div className="absolute -inset-1 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30 shadow-lg"></div>
-                  <div
-                    className={`relative w-12 h-12 rounded-xl ${service.color} flex items-center justify-center backdrop-blur-sm border border-white/20`}
-                  >
-                    <service.icon className="w-6 h-6" />
-                  </div>
+                {/* Service Icon */}
+                <div
+                  className={`absolute bottom-4 left-4 w-12 h-12 rounded-xl ${service.color} flex items-center justify-center backdrop-blur-sm`}
+                >
+                  <service.icon className="w-6 h-6" />
                 </div>
               </div>
 

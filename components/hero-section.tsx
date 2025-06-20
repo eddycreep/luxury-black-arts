@@ -89,127 +89,114 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content - Service Showcase with Enhanced Glassmorphism */}
+          {/* Right Content - Service Showcase with Glassmorphism */}
           <div className="relative animate-slide-in-right">
-            {/* Main Service Dashboard Card with enhanced glassmorphism */}
-            <div className="relative">
-              {/* Glassmorphism frame around the dashboard */}
-              <div className="absolute -inset-4 bg-white/10 backdrop-blur-xl rounded-[2rem] border border-white/20 shadow-2xl"></div>
-
-              <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-green-400 rounded-full flex items-center justify-center">
-                      <Shield className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold text-lg">Household Heroes</h3>
-                      <p className="text-white/60 text-sm">Service Dashboard</p>
-                    </div>
-                  </div>
-                  <div className="bg-green-400/20 backdrop-blur-sm rounded-full px-3 py-1">
-                    <span className="text-green-300 text-xs font-medium">ACTIVE</span>
-                  </div>
-                </div>
-
-                {/* Service Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                    <div className="text-2xl font-bold text-white">R 2,400</div>
-                    <div className="text-white/60 text-sm">Monthly Savings</div>
-                    <div className="text-green-300 text-xs">↗ +15% this month</div>
-                  </div>
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-                    <div className="text-2xl font-bold text-white">12</div>
-                    <div className="text-white/60 text-sm">Services Active</div>
-                    <div className="text-green-300 text-xs">All systems running</div>
-                  </div>
-                </div>
-
-                {/* Service List */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-green-400/20 rounded-lg flex items-center justify-center">
-                        <CheckCircle className="w-4 h-4 text-green-300" />
-                      </div>
-                      <div>
-                        <div className="text-white text-sm font-medium">Yard Cleaning</div>
-                        <div className="text-white/50 text-xs">Weekly • Next: Tomorrow</div>
-                      </div>
-                    </div>
-                    <div className="text-green-300 text-sm font-medium">R 350</div>
-                  </div>
-
-                  <div className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-blue-400/20 rounded-lg flex items-center justify-center">
-                        <CheckCircle className="w-4 h-4 text-blue-300" />
-                      </div>
-                      <div>
-                        <div className="text-white text-sm font-medium">Babysitting</div>
-                        <div className="text-white/50 text-xs">3x/week • Next: Friday</div>
-                      </div>
-                    </div>
-                    <div className="text-green-300 text-sm font-medium">R 600</div>
-                  </div>
-
-                  <div className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-purple-400/20 rounded-lg flex items-center justify-center">
-                        <CheckCircle className="w-4 h-4 text-purple-300" />
-                      </div>
-                      <div>
-                        <div className="text-white text-sm font-medium">Plant Care</div>
-                        <div className="text-white/50 text-xs">Daily • Automated</div>
-                      </div>
-                    </div>
-                    <div className="text-green-300 text-sm font-medium">R 120</div>
-                  </div>
-                </div>
-
-                {/* Quick Actions */}
-                <div className="flex space-x-2 mt-6">
-                  <button className="flex-1 bg-green-500/20 hover:bg-green-500/30 backdrop-blur-sm text-green-300 rounded-lg py-2 text-sm font-medium transition-colors">
-                    Book Service
-                  </button>
-                  <button className="flex-1 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white/80 rounded-lg py-2 text-sm font-medium transition-colors">
-                    View Schedule
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Mobile Card with enhanced glassmorphism */}
-            <div className="absolute -bottom-8 -right-8">
-              {/* Glassmorphism frame */}
-              <div className="absolute -inset-2 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-xl"></div>
-              <div className="relative bg-white/15 backdrop-blur-xl rounded-2xl p-4 border border-white/20 shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
-                    <Star className="w-4 h-4 text-white" />
+            {/* Main Service Dashboard Card */}
+            <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-green-400 rounded-full flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-white text-sm font-medium">5-Star Rating</div>
-                    <div className="text-white/60 text-xs">From 500+ families</div>
+                    <h3 className="text-white font-bold text-lg">Household Heroes</h3>
+                    <p className="text-white/60 text-sm">Service Dashboard</p>
                   </div>
                 </div>
-                <div className="flex space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                  ))}
+                <div className="bg-green-400/20 backdrop-blur-sm rounded-full px-3 py-1">
+                  <span className="text-green-300 text-xs font-medium">ACTIVE</span>
                 </div>
+              </div>
+
+              {/* Service Stats */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                  <div className="text-2xl font-bold text-white">R 2,400</div>
+                  <div className="text-white/60 text-sm">Monthly Savings</div>
+                  <div className="text-green-300 text-xs">↗ +15% this month</div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+                  <div className="text-2xl font-bold text-white">12</div>
+                  <div className="text-white/60 text-sm">Services Active</div>
+                  <div className="text-green-300 text-xs">All systems running</div>
+                </div>
+              </div>
+
+              {/* Service List */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-green-400/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-300" />
+                    </div>
+                    <div>
+                      <div className="text-white text-sm font-medium">Yard Cleaning</div>
+                      <div className="text-white/50 text-xs">Weekly • Next: Tomorrow</div>
+                    </div>
+                  </div>
+                  <div className="text-green-300 text-sm font-medium">R 350</div>
+                </div>
+
+                <div className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-blue-400/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-blue-300" />
+                    </div>
+                    <div>
+                      <div className="text-white text-sm font-medium">Babysitting</div>
+                      <div className="text-white/50 text-xs">3x/week • Next: Friday</div>
+                    </div>
+                  </div>
+                  <div className="text-green-300 text-sm font-medium">R 600</div>
+                </div>
+
+                <div className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-purple-400/20 rounded-lg flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-purple-300" />
+                    </div>
+                    <div>
+                      <div className="text-white text-sm font-medium">Plant Care</div>
+                      <div className="text-white/50 text-xs">Daily • Automated</div>
+                    </div>
+                  </div>
+                  <div className="text-green-300 text-sm font-medium">R 120</div>
+                </div>
+              </div>
+
+              {/* Quick Actions */}
+              <div className="flex space-x-2 mt-6">
+                <button className="flex-1 bg-green-500/20 hover:bg-green-500/30 backdrop-blur-sm text-green-300 rounded-lg py-2 text-sm font-medium transition-colors">
+                  Book Service
+                </button>
+                <button className="flex-1 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white/80 rounded-lg py-2 text-sm font-medium transition-colors">
+                  View Schedule
+                </button>
               </div>
             </div>
 
-            {/* Floating Trust Badge with enhanced glassmorphism */}
-            <div className="absolute -top-4 -left-4">
-              {/* Glassmorphism frame */}
-              <div className="absolute -inset-1 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-xl"></div>
-              <div className="relative bg-white/15 backdrop-blur-xl rounded-full p-3 border border-white/20 shadow-xl">
-                <Shield className="w-6 h-6 text-green-300" />
+            {/* Floating Mobile Card */}
+            <div className="absolute -bottom-8 -right-8 bg-white/15 backdrop-blur-xl rounded-2xl p-4 border border-white/20 shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
+                  <Star className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <div className="text-white text-sm font-medium">5-Star Rating</div>
+                  <div className="text-white/60 text-xs">From 500+ families</div>
+                </div>
               </div>
+              <div className="flex space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+            </div>
+
+            {/* Floating Trust Badge */}
+            <div className="absolute -top-4 -left-4 bg-white/15 backdrop-blur-xl rounded-full p-3 border border-white/20 shadow-xl">
+              <Shield className="w-6 h-6 text-green-300" />
             </div>
           </div>
         </div>
