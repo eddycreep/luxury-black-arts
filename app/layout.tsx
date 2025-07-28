@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { cn } from "@/lib/utils"
-import { Nunito_Sans } from "next/font/google"
+import { Urbanist } from "next/font/google"
+import { Toaster } from "@/components/ui/sonner";
 
-const nunito_sans = Nunito_Sans({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  display: "swap",
+  variable: "--font-urbanist",
 })
 
 export const metadata: Metadata = {
@@ -18,9 +17,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-sans antialiased", nunito_sans.className )}>
+    <html lang="en" suppressHydrationWarning className={urbanist.variable}>
+      <body className={cn("font-sans antialiased")}>
         {children}
+        <Toaster />
       </body>
     </html>
   )
