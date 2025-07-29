@@ -46,10 +46,17 @@ export function CareersSection() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-green-600 via-green-700 to-green-800 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-hh-green-600 via-hh-green-700 to-hh-green-800 relative overflow-hidden">
       {/* Background decoration elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-green-600/90 to-green-700/90"></div>
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-green-500/20 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-hh-green-600/80 to-hh-green-700/80"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-hh-green-500/20 to-transparent"></div>
+
+      {/* Decorative background patterns */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-white rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-white rounded-full blur-lg"></div>
+      </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
@@ -69,8 +76,8 @@ export function CareersSection() {
                 {/* Floating badge on image */}
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-green-700 font-semibold text-sm">Now Hiring</span>
+                    <div className="w-3 h-3 bg-hh-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-hh-green-700 font-semibold text-sm">Now Hiring</span>
                   </div>
                 </div>
 
@@ -78,15 +85,15 @@ export function CareersSection() {
                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-lg font-bold text-green-600">50+</div>
+                      <div className="text-lg font-bold text-hh-green-600">50+</div>
                       <div className="text-xs text-gray-600">Team Members</div>
                     </div>
                     <div>
-                      <div className="text-lg font-bold text-green-600">5+</div>
+                      <div className="text-lg font-bold text-hh-green-600">5+</div>
                       <div className="text-xs text-gray-600">Open Positions</div>
                     </div>
                     <div>
-                      <div className="text-lg font-bold text-green-600">24/7</div>
+                      <div className="text-lg font-bold text-hh-green-600">24/7</div>
                       <div className="text-xs text-gray-600">Support</div>
                     </div>
                   </div>
@@ -94,21 +101,21 @@ export function CareersSection() {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full backdrop-blur-sm"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/5 rounded-full backdrop-blur-sm"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/15 rounded-full backdrop-blur-sm border border-white/20"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/10 rounded-full backdrop-blur-sm border border-white/20"></div>
             </div>
 
             {/* Right Content - Form Section with slide-in animation */}
             <div className="space-y-8 animate-slide-in-right">
               {/* Section Header */}
               <div className="space-y-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/15 backdrop-blur-sm rounded-full mb-4 border border-white/20">
                   <Briefcase className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                  Join Our <span className="text-green-200">Team</span>
+                  Join Our <span className="text-hh-green-200">Team</span>
                 </h2>
-                <p className="text-xl text-green-100 leading-relaxed">
+                <p className="text-xl text-hh-green-100 leading-relaxed">
                   Ready to make a difference in families' lives? Apply today and become part of the Household Heroes
                   family.
                 </p>
@@ -122,7 +129,7 @@ export function CareersSection() {
                     <Input
                       type="text"
                       placeholder="First Name"
-                      className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
+                      className="h-14 bg-white/15 border border-white/30 text-white placeholder:text-hh-green-200 focus:border-white/60 focus:bg-white/25 rounded-xl backdrop-blur-md shadow-lg transition-all duration-300"
                       required
                       value={interest.first_name}
                       onChange={(e) => setInterest({ ...interest, first_name: e.target.value })}
@@ -132,7 +139,7 @@ export function CareersSection() {
                     <Input
                       type="text"
                       placeholder="Last Name"
-                      className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
+                      className="h-14 bg-white/15 border border-white/30 text-white placeholder:text-hh-green-200 focus:border-white/60 focus:bg-white/25 rounded-xl backdrop-blur-md shadow-lg transition-all duration-300"
                       required
                       value={interest.last_name}
                       onChange={(e) => setInterest({ ...interest, last_name: e.target.value })}
@@ -145,7 +152,7 @@ export function CareersSection() {
                   <Input
                     type="email"
                     placeholder="Email Address"
-                    className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
+                    className="h-14 bg-white/15 border border-white/30 text-white placeholder:text-hh-green-200 focus:border-white/60 focus:bg-white/25 rounded-xl backdrop-blur-md shadow-lg transition-all duration-300"
                     required
                     value={interest.email}
                     onChange={(e) => setInterest({ ...interest, email: e.target.value })}
@@ -157,7 +164,7 @@ export function CareersSection() {
                   <Input
                     type="tel"
                     placeholder="Phone Number"
-                    className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
+                    className="h-14 bg-white/15 border border-white/30 text-white placeholder:text-hh-green-200 focus:border-white/60 focus:bg-white/25 rounded-xl backdrop-blur-md shadow-lg transition-all duration-300"
                     required
                     value={interest.phone_number}
                     onChange={(e) => setInterest({ ...interest, phone_number: e.target.value })}
@@ -167,7 +174,7 @@ export function CareersSection() {
                 {/* Service selection dropdown */}
                 <div className="space-y-2">
                   <select
-                    className="w-full h-14 bg-white/10 border border-white/20 text-white rounded-lg px-4 backdrop-blur-sm focus:border-white focus:bg-white/20 focus:outline-none"
+                    className="w-full h-14 bg-white/15 border border-white/30 text-white rounded-xl px-4 backdrop-blur-md shadow-lg focus:border-white/60 focus:bg-white/25 focus:outline-none transition-all duration-300"
                     value={interest.interest}
                     onChange={(e) => setInterest({ ...interest, interest: e.target.value })}
                   >
@@ -201,10 +208,12 @@ export function CareersSection() {
                     <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" className="hidden" required />
                     <label
                       htmlFor="cv"
-                      className="flex items-center justify-center w-full h-14 bg-white/10 border-2 border-dashed border-white/30 rounded-lg cursor-pointer hover:border-white hover:bg-white/20 transition-colors group backdrop-blur-sm"
+                      className="flex items-center justify-center w-full h-14 bg-white/15 border-2 border-dashed border-white/40 rounded-xl cursor-pointer hover:border-white/60 hover:bg-white/25 transition-all duration-300 group backdrop-blur-md shadow-lg"
                     >
-                      <Upload className="w-5 h-5 text-green-200 group-hover:text-white mr-2" />
-                      <span className="text-green-200 group-hover:text-white">Upload CV/Resume</span>
+                      <Upload className="w-5 h-5 text-hh-green-200 group-hover:text-white mr-2 transition-colors" />
+                      <span className="text-hh-green-200 group-hover:text-white transition-colors">
+                        Upload CV/Resume
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -214,7 +223,7 @@ export function CareersSection() {
                   <textarea
                     placeholder="Cover Notes (Optional)"
                     rows={4}
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg px-4 py-3 resize-none backdrop-blur-sm focus:outline-none"
+                    className="w-full bg-white/15 border border-white/30 text-white placeholder:text-hh-green-200 focus:border-white/60 focus:bg-white/25 rounded-xl px-4 py-3 resize-none backdrop-blur-md shadow-lg focus:outline-none transition-all duration-300"
                   />
                 </div>
 
@@ -223,7 +232,7 @@ export function CareersSection() {
                   onClick={handleSubmit}
                   type="submit"
                   size="lg"
-                  className="w-full h-14 bg-white text-green-700 hover:bg-green-50 text-lg font-semibold rounded-lg group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="w-full h-14 bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-hh-green-700 text-lg font-semibold rounded-xl group shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 >
                   Submit Application
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -233,16 +242,16 @@ export function CareersSection() {
               {/* Trust indicators */}
               <div className="flex items-center space-x-6 pt-4">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-200" />
-                  <span className="text-green-100 text-sm">Quick Response</span>
+                  <CheckCircle className="w-5 h-5 text-hh-green-200" />
+                  <span className="text-hh-green-100 text-sm">Quick Response</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Users className="w-5 h-5 text-green-200" />
-                  <span className="text-green-100 text-sm">Growing Team</span>
+                  <Users className="w-5 h-5 text-hh-green-200" />
+                  <span className="text-hh-green-100 text-sm">Growing Team</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Heart className="w-5 h-5 text-green-200" />
-                  <span className="text-green-100 text-sm">Make a Difference</span>
+                  <Heart className="w-5 h-5 text-hh-green-200" />
+                  <span className="text-hh-green-100 text-sm">Make a Difference</span>
                 </div>
               </div>
             </div>
