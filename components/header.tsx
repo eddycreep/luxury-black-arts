@@ -33,7 +33,7 @@ export function Header() {
             <Link href="#contact" className="text-gray-700 hover:text-green-600 transition-colors">
               Contact
             </Link>
-            <Button className="bg-green-600 hover:bg-green-700 text-white">Get Quote</Button>
+            <Button className="bg-green-600 hover:bg-green-700 text-white">Book Now</Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -55,7 +55,7 @@ export function Header() {
               <Link href="#contact" className="text-gray-700 hover:text-green-600 transition-colors">
                 Contact
               </Link>
-              <Button className="bg-green-600 hover:bg-green-700 text-white w-full">Get Quote</Button>
+              <Button className="bg-green-600 hover:bg-green-700 text-white w-full">Book Now</Button>
             </nav>
           </div>
         )}

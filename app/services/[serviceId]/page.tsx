@@ -1,3 +1,5 @@
+"use client" // Ensures this component is a Client Component
+
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,6 +19,7 @@ import {
   Clock,
   Heart,
 } from "lucide-react"
+import { useEffect } from "react" // Import useEffect for client-side scrolling
 
 // Enhanced service data with premium styling and content
 const servicesData = {
@@ -24,7 +27,7 @@ const servicesData = {
     id: "yard-cleaning",
     title: "Premium Professional Yard Care Services",
     subtitle: "Transform your outdoor space with expert premium care",
-    heroImage: "/images/water-hoes.jpg",
+    heroImage: "/images/lawnmower.jpg", // Updated image
     heroAlt: "Professional pressure washing and premium yard cleaning service",
     shortDescription:
       "Complete front and backyard maintenance including mowing, trimming, and debris removal with premium attention to detail.",
@@ -88,20 +91,20 @@ const servicesData = {
         location: "Sandton",
         rating: 5,
         text: "Household Heroes completely transformed our overgrown backyard with their premium service. The team is professional, reliable, and their attention to detail is incredible. Our property value has definitely increased significantly!",
-        image: "/images/sweep.jpg",
+        image: "/images/family-gardening.jpg", // Updated image
       },
       {
         name: "Michael Thompson",
         location: "Rosebank",
         rating: 5,
         text: "I was spending every weekend trying to maintain my large garden. Now I have my weekends back and my yard looks better than ever with their premium care. Worth every penny for the quality!",
-        image: "/images/water-hoes.jpg",
+        image: "/images/male-red-lawnmower.jpg", // Updated image
       },
     ],
     gallery: [
-      { image: "/images/sweep.jpg", alt: "Before and after premium yard transformation" },
-      { image: "/images/water-hoes.jpg", alt: "Professional pressure washing service" },
-      { image: "/images/plant-watering.jpg", alt: "Premium garden maintenance and care" },
+      { image: "/images/lawnmower.jpg", alt: "Professional lawn mowing service" }, // Updated image
+      { image: "/images/yard-umbrella.jpg", alt: "Outdoor seating with umbrella" }, // Updated image
+      { image: "/images/yard-tables-chairs.jpg", alt: "Outdoor dining area in garden" }, // Updated image
     ],
     faqs: [
       {
@@ -125,7 +128,7 @@ const servicesData = {
     id: "babysitting",
     title: "Elite Professional Babysitting Services",
     subtitle: "Premium childcare for your complete peace of mind",
-    heroImage: "/images/baby-sitting.jpg",
+    heroImage: "/images/girls-house-sitter.jpg", // Updated image
     heroAlt: "Professional elite babysitter with children",
     shortDescription: "Trusted and experienced premium childcare services for your complete peace of mind.",
     detailedDescription:
@@ -188,19 +191,19 @@ const servicesData = {
         location: "Constantia",
         rating: 5,
         text: "Our premium babysitter from Household Heroes is amazing! She's become like family to us. My kids actually get excited when they know she's coming over. Professional, caring, and completely trustworthy.",
-        image: "/images/baby-sitting-two.jpg",
+        image: "/images/girls-house-sitter.jpg", // Updated image
       },
       {
         name: "David Wilson",
         location: "Camps Bay",
         rating: 5,
         text: "As a single parent, finding reliable premium childcare was crucial. The team at Household Heroes matched us with the perfect caregiver. I can work late knowing my daughter is in excellent hands.",
-        image: "/images/baby-sitting.jpg",
+        image: "/images/baby-sitting.jpg", // Kept existing
       },
     ],
     gallery: [
-      { image: "/images/baby-sitting.jpg", alt: "Professional premium childcare services" },
-      { image: "/images/baby-sitting-two.jpg", alt: "Educational activities with children" },
+      { image: "/images/girls-house-sitter.jpg", alt: "Professional premium childcare services" }, // Updated image
+      { image: "/images/baby-sitting-two.jpg", alt: "Educational activities with children" }, // Kept existing
     ],
     faqs: [
       {
@@ -224,7 +227,7 @@ const servicesData = {
     id: "house-sitting",
     title: "Luxury Professional House Sitting Services",
     subtitle: "Your premium home, secure and cared for while you're away",
-    heroImage: "/images/pet-sitting.jpg",
+    heroImage: "/images/male-house-sitter.jpg", // Updated image
     heroAlt: "Professional luxury house sitting and pet care",
     shortDescription: "Comprehensive premium home security and maintenance while you're away.",
     detailedDescription:
@@ -286,20 +289,20 @@ const servicesData = {
         location: "Hout Bay",
         rating: 5,
         text: "We traveled to Europe for three weeks and came home to find everything exactly as we left it - actually better! Our garden was thriving, our cats were happy, and we received daily updates. Incredible premium service!",
-        image: "/images/pet-sitting-wto.jpg",
+        image: "/images/male-house-sitter.jpg", // Updated image
       },
       {
         name: "Robert Chen",
         location: "Green Point",
         rating: 5,
         text: "Business travel is stressful enough without worrying about home. Household Heroes' luxury house sitting service gives me complete peace of mind. Professional, reliable, and completely trustworthy.",
-        image: "/images/household-support.jpg",
+        image: "/images/household-support.jpg", // Kept existing
       },
     ],
     gallery: [
-      { image: "/images/pet-sitting.jpg", alt: "Professional premium pet care services" },
-      { image: "/images/pet-sitting-wto.jpg", alt: "Home security and maintenance" },
-      { image: "/images/plant-watering.jpg", alt: "Plant and garden care" },
+      { image: "/images/male-house-sitter.jpg", alt: "Professional premium house sitting services" }, // Updated image
+      { image: "/images/pet-sitting-wto.jpg", alt: "Home security and maintenance" }, // Kept existing
+      { image: "/images/plant-watering.jpg", alt: "Plant and garden care" }, // Kept existing
     ],
     faqs: [
       {
@@ -323,7 +326,7 @@ const servicesData = {
     id: "light-errands",
     title: "Personal Concierge & Assistant Services",
     subtitle: "Your time is valuable - let us handle the premium details",
-    heroImage: "/images/light-errand.jpg",
+    heroImage: "/images/light-errand.jpg", // Kept existing
     heroAlt: "Professional errand and premium shopping services",
     shortDescription: "Grocery runs, package pickup, and other helpful premium household errands.",
     detailedDescription:
@@ -385,19 +388,19 @@ const servicesData = {
         location: "Claremont",
         rating: 5,
         text: "Having someone handle my weekly grocery shopping and errands has been a game-changer for my busy premium lifestyle. The team is efficient, trustworthy, and always gets exactly what I need.",
-        image: "/images/light-errand.jpg",
+        image: "/images/light-errand.jpg", // Kept existing
       },
       {
         name: "Mark Stevens",
         location: "Observatory",
         rating: 5,
         text: "As a small business owner, every minute counts. Household Heroes handles all my personal errands so I can focus on growing my business. Excellent premium service!",
-        image: "/images/household-support.jpg",
+        image: "/images/household-support.jpg", // Kept existing
       },
     ],
     gallery: [
-      { image: "/images/light-errand.jpg", alt: "Professional premium grocery shopping service" },
-      { image: "/images/household-support.jpg", alt: "Personal assistant services" },
+      { image: "/images/light-errand.jpg", alt: "Professional premium grocery shopping service" }, // Kept existing
+      { image: "/images/household-support.jpg", alt: "Personal assistant services" }, // Kept existing
     ],
     faqs: [
       {
@@ -421,7 +424,7 @@ const servicesData = {
     id: "plant-watering",
     title: "Premium Plant Care & Botanical Services",
     subtitle: "Keep your green spaces thriving with expert premium care",
-    heroImage: "/images/plant-watering.jpg",
+    heroImage: "/images/top-view-garden.jpg", // Updated image
     heroAlt: "Professional plant watering and premium garden care",
     shortDescription: "Keep your garden thriving with our premium plant care and watering services.",
     detailedDescription:
@@ -483,19 +486,20 @@ const servicesData = {
         location: "Newlands",
         rating: 5,
         text: "My indoor jungle has never looked better! The team really understands different plant needs with their premium service. I travel frequently for work and come home to thriving, healthy plants every time.",
-        image: "/images/plant-watering.jpg",
+        image: "/images/woman-yellow-shirt.jpg", // Updated image
       },
       {
         name: "James Mitchell",
         location: "Rondebosch",
         rating: 5,
         text: "I have a large garden but lack the knowledge for proper plant care. Household Heroes' premium expertise has transformed my outdoor space into a botanical paradise.",
-        image: "/images/water-hoes.jpg",
+        image: "/images/family-gardening.jpg", // Updated image
       },
     ],
     gallery: [
-      { image: "/images/plant-watering.jpg", alt: "Professional premium plant watering service" },
-      { image: "/images/water-hoes.jpg", alt: "Garden irrigation and care" },
+      { image: "/images/top-view-garden.jpg", alt: "Professional plant watering service" }, // Updated image
+      { image: "/images/woman-yellow-shirt.jpg", alt: "Indoor plant care" }, // Updated image
+      { image: "/images/family-gardening.jpg", alt: "Garden maintenance and care" }, // Updated image
     ],
     faqs: [
       {
@@ -519,7 +523,7 @@ const servicesData = {
     id: "home-support",
     title: "Comprehensive Premium Home Support Services",
     subtitle: "Personalized household assistance for modern premium families",
-    heroImage: "/images/household-support.jpg",
+    heroImage: "/images/household-support.jpg", // Kept existing
     heroAlt: "Comprehensive premium home support and assistance services",
     shortDescription: "Additional premium household assistance tailored to your family's needs.",
     detailedDescription:
@@ -581,19 +585,19 @@ const servicesData = {
         location: "Bishopscourt",
         rating: 5,
         text: "The personalized premium home support we receive has made managing our large household so much easier. The team is professional, trustworthy, and truly cares about our family's premium needs.",
-        image: "/images/household-support.jpg",
+        image: "/images/household-support.jpg", // Kept existing
       },
       {
         name: "Andrew Davis",
         location: "Wynberg",
         rating: 5,
         text: "As we age, maintaining our home became challenging. Household Heroes provides the perfect amount of premium support while respecting our independence. Highly recommended!",
-        image: "/images/baby-sitting.jpg",
+        image: "/images/baby-sitting.jpg", // Kept existing
       },
     ],
     gallery: [
-      { image: "/images/household-support.jpg", alt: "Professional premium home support services" },
-      { image: "/images/baby-sitting.jpg", alt: "Senior companion and assistance services" },
+      { image: "/images/household-support.jpg", alt: "Professional premium home support services" }, // Kept existing
+      { image: "/images/baby-sitting.jpg", alt: "Senior companion and assistance services" }, // Kept existing
     ],
     faqs: [
       {
@@ -616,15 +620,31 @@ const servicesData = {
 }
 
 interface ServiceDetailPageProps {
-  params: Promise<{ serviceId: string }>
+  params: { serviceId: string } // Changed params type to object, not Promise
 }
 
-export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
-  // Await the params Promise to get the serviceId
-  const { serviceId } = await params
-  const service = servicesData[serviceId as keyof typeof servicesData]
+export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
+  // Scroll to the top of the page on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  // Access serviceId directly from params object
+  const { serviceId } = params
+
+  // Map common aliases to actual service IDs
+  const serviceIdMap: Record<string, keyof typeof servicesData> = {
+    "plant-care": "plant-watering", // Map "plant-care" to "plant-watering"
+    // Add other potential aliases here if needed in the future
+  }
+
+  // Use the mapped ID or the original serviceId if no mapping exists
+  const actualServiceId = serviceIdMap[serviceId] || serviceId
+  const service = servicesData[actualServiceId as keyof typeof servicesData]
 
   if (!service) {
+    // Log the missing serviceId for debugging
+    console.error(`Service not found for ID: ${serviceId}. Attempted lookup with: ${actualServiceId}`)
     notFound()
   }
 
@@ -779,7 +799,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                     </div>
                     <div className="flex items-center justify-center space-x-2">
                       <Mail className="w-4 h-4 text-green-600" />
-                      <span className="text-gray-700 font-medium">whires44@gmail.com</span>
+                      <span className="text-gray-700 font-medium">yangacccorp@gmail.com</span>
                     </div>
                   </div>
                 </div>
@@ -935,7 +955,9 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       </section>
 
       {/* Enhanced CTA section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 via-green-700 to-green-800 bg-pattern">
+      <section className="py-20 bg-gradient-to-br from-green-600 to-green-800">
+        {" "}
+        {/* Modified gradient to match HomePage */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Premium floating elements */}
           <div className="absolute inset-0 opacity-20">
