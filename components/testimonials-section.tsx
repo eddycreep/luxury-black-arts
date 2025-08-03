@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Quote } from "lucide-react"
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 
 const testimonials = [
   {
@@ -34,12 +35,19 @@ const testimonials = [
 ]
 
 export function TestimonialsSection() {
+  const { ref: headerRef, isIntersecting: headerInView } = useIntersectionObserver()
+  const { ref: ctaRef, isIntersecting: ctaInView } = useIntersectionObserver()
+  const testimonialRefs = testimonials.map(() => useIntersectionObserver())
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div
+            ref={headerRef}
+            className={`text-center mb-16 animate-on-scroll animate-slide-in-up ${headerInView ? "in-view" : ""}`}
+          >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               What Our <span className="text-green-600">Families</span> Say
             </h2>
@@ -51,50 +59,58 @@ export function TestimonialsSection() {
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <Card
-                key={testimonial.id}
-                className="relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-0"
-              >
-                {/* Quote icon */}
-                <div className="absolute top-6 right-6 text-green-100">
-                  <Quote className="w-8 h-8" />
-                </div>
+            {testimonials.map((testimonial, index) => {
+              const { ref, isIntersecting } = testimonialRefs[index]
 
-                <CardContent className="p-8">
-                  {/* Rating */}
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
+              return (
+                <Card
+                  key={testimonial.id}
+                  ref={ref}
+                  className={`relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-0 animate-on-scroll animate-slide-in-up delay-${index * 200} ${isIntersecting ? "in-view" : ""}`}
+                >
+                  {/* Quote icon */}
+                  <div className="absolute top-6 right-6 text-green-100">
+                    <Quote className="w-8 h-8" />
                   </div>
 
-                  {/* Testimonial text */}
-                  <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
-
-                  {/* Customer info */}
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.location}</div>
-                      <div className="text-xs text-green-600 font-medium">{testimonial.service}</div>
+                  <CardContent className="p-8">
+                    {/* Rating */}
+                    <div className="flex items-center space-x-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
                     </div>
-                  </div>
-                </CardContent>
 
-                {/* Decorative element */}
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-green-600"></div>
-              </Card>
-            ))}
+                    {/* Testimonial text */}
+                    <p className="text-gray-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
+
+                    {/* Customer info */}
+                    <div className="flex items-center space-x-4">
+                      <img
+                        src={testimonial.image || "/placeholder.svg"}
+                        alt={testimonial.name}
+                        className="w-12 h-12 rounded-full object-cover"
+                      />
+                      <div>
+                        <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                        <div className="text-sm text-gray-600">{testimonial.location}</div>
+                        <div className="text-xs text-green-600 font-medium">{testimonial.service}</div>
+                      </div>
+                    </div>
+                  </CardContent>
+
+                  {/* Decorative element */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-green-600"></div>
+                </Card>
+              )
+            })}
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16">
+          <div
+            ref={ctaRef}
+            className={`text-center mt-16 animate-on-scroll animate-fade-in ${ctaInView ? "in-view" : ""}`}
+          >
             <div className="bg-green-50 rounded-2xl p-8 max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Join Our Happy Customers?</h3>
               <p className="text-gray-600 mb-6">

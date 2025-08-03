@@ -2,8 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Star, Shield, CheckCircle, Phone } from "lucide-react"
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 
 export function HeroSection() {
+  const { ref: leftContentRef, isIntersecting: leftInView } = useIntersectionObserver()
+  const { ref: rightContentRef, isIntersecting: rightInView } = useIntersectionObserver()
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-emerald-900">
       {/* Animated Background with Diagonal Light Streaks */}
@@ -30,7 +34,10 @@ export function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
           {/* Left Content */}
-          <div className="space-y-8 animate-slide-in-left">
+          <div
+            ref={leftContentRef}
+            className={`space-y-8 animate-on-scroll animate-slide-in-left ${leftInView ? "in-view" : ""}`}
+          >
             {/* Trust Badge with Glassmorphism */}
             <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-lg">
               <div className="flex items-center space-x-1">
@@ -65,7 +72,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-md px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:border-white/50"
+                className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-md px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:border-white/50 bg-transparent"
               >
                 <Phone className="mr-2 w-5 h-5" />
                 Call 065 842 1416
@@ -90,7 +97,10 @@ export function HeroSection() {
           </div>
 
           {/* Right Content - Service Showcase with Glassmorphism */}
-          <div className="relative animate-slide-in-right">
+          <div
+            ref={rightContentRef}
+            className={`relative animate-on-scroll animate-slide-in-right ${rightInView ? "in-view" : ""}`}
+          >
             {/* Main Service Dashboard Card */}
             <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
               {/* Header */}

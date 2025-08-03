@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Star } from "lucide-react"
 import Link from "next/link"
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 
 const services = [
   {
@@ -64,12 +65,19 @@ const services = [
 ]
 
 export function ServicesSection() {
+  const { ref: headerRef, isIntersecting: headerInView } = useIntersectionObserver()
+  const { ref: ctaRef, isIntersecting: ctaInView } = useIntersectionObserver()
+  const serviceRefs = services.map(() => useIntersectionObserver())
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div
+            ref={headerRef}
+            className={`text-center mb-16 animate-on-scroll animate-slide-in-up ${headerInView ? "in-view" : ""}`}
+          >
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Our <span className="text-green-600">Services</span>
             </h2>
@@ -81,56 +89,64 @@ export function ServicesSection() {
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={service.id}
-                className="group hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0 shadow-lg overflow-hidden"
-              >
-                <div className="relative">
-                  <img
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            {services.map((service, index) => {
+              const { ref, isIntersecting } = serviceRefs[index]
 
-                  {/* Price badge */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg">
-                    <span className="text-green-700 font-semibold text-sm">{service.price}</span>
-                  </div>
+              return (
+                <Card
+                  key={service.id}
+                  ref={ref}
+                  className={`group hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0 shadow-lg overflow-hidden animate-on-scroll animate-slide-in-up delay-${index * 100} ${isIntersecting ? "in-view" : ""}`}
+                >
+                  <div className="relative">
+                    <img
+                      src={service.image || "/placeholder.svg"}
+                      alt={service.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
 
-                  {/* Rating badge */}
-                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg">
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-gray-900 font-semibold text-sm">{service.rating}</span>
-                      <span className="text-gray-600 text-xs">({service.reviews})</span>
+                    {/* Price badge */}
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg">
+                      <span className="text-green-700 font-semibold text-sm">{service.price}</span>
+                    </div>
+
+                    {/* Rating badge */}
+                    <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg">
+                      <div className="flex items-center space-x-1">
+                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                        <span className="text-gray-900 font-semibold text-sm">{service.rating}</span>
+                        <span className="text-gray-600 text-xs">({service.reviews})</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
 
-                  <Link href={`/services/${service.id}`}>
-                    <Button
-                      variant="outline"
-                      className="w-full group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-all duration-300 bg-transparent"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+                    <Link href={`/services/${service.id}`}>
+                      <Button
+                        variant="outline"
+                        className="w-full group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-all duration-300 bg-transparent"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-16">
+          <div
+            ref={ctaRef}
+            className={`text-center mt-16 animate-on-scroll animate-fade-in ${ctaInView ? "in-view" : ""}`}
+          >
             <p className="text-lg text-gray-600 mb-6">
               Don't see exactly what you need? We offer custom solutions too!
             </p>

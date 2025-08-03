@@ -6,8 +6,12 @@ import { ArrowRight, CheckCircle } from "lucide-react"
 import { useState } from "react"
 import { submitCustomerInterest } from "./data/create-customer-interest"
 import { toast } from "sonner"
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 
 export function CTASection() {
+  const { ref: leftContentRef, isIntersecting: leftInView } = useIntersectionObserver()
+  const { ref: rightContentRef, isIntersecting: rightInView } = useIntersectionObserver()
+
   const [interest, setInterest] = useState({
     first_name: "",
     last_name: "",
@@ -21,27 +25,27 @@ export function CTASection() {
       const response = await submitCustomerInterest({ customerInterest: interest })
 
       if (response.message === "success") {
-        toast('Interest submitted', {
-            icon: '✔️',
-            style: {
-                borderRadius: '10px',
-                background: '#fff',
-                color: '#333',
-            },
-            duration: 3000,
-        });
+        toast("Interest submitted", {
+          icon: "✔️",
+          style: {
+            borderRadius: "10px",
+            background: "#fff",
+            color: "#333",
+          },
+          duration: 3000,
+        })
       }
     } catch (error) {
       console.error(error)
-        toast('Error submitting interest', {
-          icon: '❌',
-          style: {
-              borderRadius: '10px',
-              background: '#fff',
-              color: '#333',
-          },
-          duration: 3000,
-        });
+      toast("Error submitting interest", {
+        icon: "❌",
+        style: {
+          borderRadius: "10px",
+          background: "#fff",
+          color: "#333",
+        },
+        duration: 3000,
+      })
     }
   }
 
@@ -54,9 +58,11 @@ export function CTASection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-
             {/* Left Content - Form Section with slide-in animation */}
-            <div className="space-y-8 animate-slide-in-left">
+            <div
+              ref={leftContentRef}
+              className={`space-y-8 animate-on-scroll animate-slide-in-left ${leftInView ? "in-view" : ""}`}
+            >
               {/* Main heading and description */}
               <div className="space-y-6">
                 <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -78,7 +84,7 @@ export function CTASection() {
                       className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
                       required
                       value={interest.first_name}
-                      onChange={e => setInterest({ ...interest, first_name: e.target.value })}
+                      onChange={(e) => setInterest({ ...interest, first_name: e.target.value })}
                     />
                   </div>
                   <div className="space-y-2">
@@ -88,7 +94,7 @@ export function CTASection() {
                       className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
                       required
                       value={interest.last_name}
-                      onChange={e => setInterest({ ...interest, last_name: e.target.value })}
+                      onChange={(e) => setInterest({ ...interest, last_name: e.target.value })}
                     />
                   </div>
                 </div>
@@ -101,7 +107,7 @@ export function CTASection() {
                     className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
                     required
                     value={interest.email}
-                    onChange={e => setInterest({ ...interest, email: e.target.value })}
+                    onChange={(e) => setInterest({ ...interest, email: e.target.value })}
                   />
                 </div>
 
@@ -113,7 +119,7 @@ export function CTASection() {
                     className="h-14 bg-white/10 border-white/20 text-white placeholder:text-green-200 focus:border-white focus:bg-white/20 rounded-lg backdrop-blur-sm"
                     required
                     value={interest.phone_number}
-                    onChange={e => setInterest({ ...interest, phone_number: e.target.value })}
+                    onChange={(e) => setInterest({ ...interest, phone_number: e.target.value })}
                   />
                 </div>
 
@@ -122,7 +128,7 @@ export function CTASection() {
                   <select
                     className="w-full h-14 bg-white/10 border border-white/20 text-white rounded-lg px-4 backdrop-blur-sm focus:border-white focus:bg-white/20 focus:outline-none"
                     value={interest.interest}
-                    onChange={e => setInterest({ ...interest, interest: e.target.value })}
+                    onChange={(e) => setInterest({ ...interest, interest: e.target.value })}
                   >
                     <option value="" className="text-gray-900">
                       Interested in...
@@ -178,7 +184,10 @@ export function CTASection() {
             </div>
 
             {/* Right Content - Updated with provided family image and slide-in animation */}
-            <div className="relative animate-slide-in-right">
+            <div
+              ref={rightContentRef}
+              className={`relative animate-on-scroll animate-slide-in-right ${rightInView ? "in-view" : ""}`}
+            >
               {/* Main image container */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
@@ -202,7 +211,6 @@ export function CTASection() {
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full backdrop-blur-sm"></div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/5 rounded-full backdrop-blur-sm"></div>
             </div>
-
           </div>
         </div>
       </div>

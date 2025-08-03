@@ -1,14 +1,22 @@
 "use client"
+
 import { CheckCircle, Users, Clock, Shield } from "lucide-react"
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 
 export function AboutSection() {
+  const { ref: leftContentRef, isIntersecting: leftInView } = useIntersectionObserver()
+  const { ref: rightContentRef, isIntersecting: rightInView } = useIntersectionObserver()
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
+            <div
+              ref={leftContentRef}
+              className={`space-y-8 animate-on-scroll animate-slide-in-left ${leftInView ? "in-view" : ""}`}
+            >
               <div className="space-y-6">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                   Why Choose <span className="text-green-600">Household Heroes</span>?
@@ -77,7 +85,10 @@ export function AboutSection() {
             </div>
 
             {/* Right Content - Image */}
-            <div className="relative">
+            <div
+              ref={rightContentRef}
+              className={`relative animate-on-scroll animate-slide-in-right ${rightInView ? "in-view" : ""}`}
+            >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="/images/cleaning-equipment-girl.jpg"
