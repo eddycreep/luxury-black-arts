@@ -3,7 +3,7 @@
 import axios from "axios"
 import { apiEndPoint } from "@/lib/utils"
 import { CustomerInterest } from "./types/types"
-import { toast } from "sonner"
+// import { toast } from "sonner"
 
 interface Props {
     customerInterest: CustomerInterest
