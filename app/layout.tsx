@@ -10,15 +10,16 @@ const urbanist = Urbanist({
 })
 
 export const metadata: Metadata = {
-  title: 'Household Heroes | CC Corporation',
-  description: 'Yard cleaning and trusted home services by Household Heroes, powered by Crews Cntrl Corporation.',
+  title: 'Luxury Black Arts | Underground Culture & Artistry',
+  description: 'Custom tattoos, punk music, and underground fashion by Kaos Mayhem and collective. Authentic underground culture since 2021.',
+  keywords: 'tattoos, punk music, underground fashion, Kaos Mayhem, grunge, trap metal, custom designs, punk culture',
   generator: 'v0.dev',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className={urbanist.variable}>
-      <body className={cn("font-sans antialiased")}>
+      <body className={cn("font-sans antialiased bg-black text-white")}>
         {children}
         <Toaster />
       </body>

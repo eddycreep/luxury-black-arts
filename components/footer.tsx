@@ -1,61 +1,70 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Palette, Music, Shirt } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-white text-gray-900 py-16 border-t border-gray-200">
+    <footer className="bg-black text-white py-16 border-t border-red-900/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <Image src="/images/logo.png" alt="Household Heroes Logo" width={32} height={32} className="w-8 h-8" />
+              <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">LBA</span>
+              </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-900">Household Heroes</h3>
-                <p className="text-sm text-gray-600">A CC Corporation Service</p>
+                <h3 className="font-bold text-lg text-white">Luxury Black Arts</h3>
+                <p className="text-sm text-red-400">Underground Culture & Artistry</p>
               </div>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Professional household services you can trust. From yard maintenance to childcare, we're here to support
-              your family's needs.
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Authentic underground culture through custom tattoos, raw music, and rebellious fashion. 
+              Led by Kaos Mayhem and the collective since 2021.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="w-5 h-5 text-gray-600 hover:text-green-600 cursor-pointer transition-colors" />
-              <Instagram className="w-5 h-5 text-gray-600 hover:text-green-600 cursor-pointer transition-colors" />
-              <Twitter className="w-5 h-5 text-gray-600 hover:text-green-600 cursor-pointer transition-colors" />
+              <Facebook className="w-5 h-5 text-gray-400 hover:text-red-500 cursor-pointer transition-colors" />
+              <Instagram className="w-5 h-5 text-gray-400 hover:text-red-500 cursor-pointer transition-colors" />
+              <Twitter className="w-5 h-5 text-gray-400 hover:text-red-500 cursor-pointer transition-colors" />
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-gray-900">Services</h4>
+            <h4 className="font-semibold text-lg mb-4 text-white">Underground Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Yard Cleaning
+                <Link href="#tattoos" className="text-gray-300 hover:text-red-500 transition-colors flex items-center">
+                  <Palette className="w-3 h-3 mr-2" />
+                  Custom Tattoos
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Babysitting
+                <Link href="#music" className="text-gray-300 hover:text-red-500 transition-colors flex items-center">
+                  <Music className="w-3 h-3 mr-2" />
+                  Underground Music
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  House Sitting
+                <Link href="#clothing" className="text-gray-300 hover:text-red-500 transition-colors flex items-center">
+                  <Shirt className="w-3 h-3 mr-2" />
+                  Punk Fashion
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Light Errands
+                <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                  Band Merchandise
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Plant Watering
+                <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                  Live Performances
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                  Custom Designs
                 </Link>
               </li>
             </ul>
@@ -63,31 +72,31 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-gray-900">Company</h4>
+            <h4 className="font-semibold text-lg mb-4 text-white">Underground Collective</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  About Us
+                <Link href="#about" className="text-gray-300 hover:text-red-500 transition-colors">
+                  About Kaos Mayhem
                 </Link>
               </li>
               <li>
-                <Link href="#careers" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Careers
+                <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                  Our Story
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Insurance
+                <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                  Artist Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
+                <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
+                  Underground Ethics
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="text-gray-300 hover:text-red-500 transition-colors">
                   Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-600 hover:text-green-600 transition-colors">
-                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -95,42 +104,47 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-gray-900">Contact</h4>
+            <h4 className="font-semibold text-lg mb-4 text-white">Get In Touch</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-green-600" />
-                <span className="text-gray-600">065 842 1416</span>
+                <Phone className="w-4 h-4 text-red-500" />
+                <span className="text-gray-300">+27 (0) 83 456 7890</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-green-600" />
-                <span className="text-gray-600">whires44@gmail.com</span>
+                <Mail className="w-4 h-4 text-red-500" />
+                <span className="text-gray-300">kaos@luxuryblackarts.com</span>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-green-600 mt-0.5" />
-                <span className="text-gray-600">
-                  32 Dukes Avenue, 3 Danthrope
+                <MapPin className="w-4 h-4 text-red-500 mt-0.5" />
+                <span className="text-gray-300">
+                  Underground Studio
                   <br />
-                  Johannessbug, 2194
+                  Cape Town, South Africa
                 </span>
+              </div>
+              <div className="mt-4 pt-4 border-t border-gray-700">
+                <p className="text-gray-400 text-xs">
+                  Book consultations for tattoos, music collaborations, or custom fashion pieces.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-600 text-sm">
-            © {new Date().getFullYear()} Household Heroes. All rights reserved. A CC Corporation Service.
+        <div className="border-t border-red-900/30 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm">
+            © {new Date().getFullYear()} Luxury Black Arts. All rights reserved. Underground since 2021.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <Link href="#" className="text-gray-600 hover:text-green-600 text-sm transition-colors">
+            <Link href="#" className="text-gray-400 hover:text-red-500 text-sm transition-colors">
               Privacy
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-green-600 text-sm transition-colors">
+            <Link href="#" className="text-gray-400 hover:text-red-500 text-sm transition-colors">
               Terms
             </Link>
-            <Link href="#" className="text-gray-600 hover:text-green-600 text-sm transition-colors">
-              Sitemap
+            <Link href="#" className="text-gray-400 hover:text-red-500 text-sm transition-colors">
+              Underground Ethics
             </Link>
           </div>
         </div>
