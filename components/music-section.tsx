@@ -36,7 +36,7 @@ export function MusicSection() {
               <div className="relative chaos-scatter-2 underground-shadow rebel-hover">
                 <div className="relative overflow-hidden jagged-border">
                   <img
-                    src="/images/punk-concert.jpg"
+                    src="/concert-fans-black-white.jpeg"
                     alt="Live punk concert performance by Kaos Mayhem and group - underground music scene"
                     className="w-full h-auto object-cover chaos-scatter-1"
                   />
@@ -96,6 +96,20 @@ export function MusicSection() {
                 {/* Floating chaotic elements around image */}
                 <div className="absolute -top-6 -right-6 w-24 h-24 spray-paint chaos-float"></div>
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 spray-paint chaos-scatter-3"></div>
+
+                {/* Additional music images as floating chaos elements */}
+                <div className="absolute -top-8 left-1/4 w-22 h-22 chaos-float underground-shadow">
+                  <img src="/granny-punk.jpg" alt="Granny punk style" className="w-full h-full object-cover jagged-border opacity-80" />
+                </div>
+                <div className="absolute bottom-1/4 -right-8 w-18 h-18 chaos-scatter-1 underground-shadow">
+                  <img src="/punkies.jpeg" alt="Punk community" className="w-full h-full object-cover jagged-border opacity-75" />
+                </div>
+                <div className="absolute top-1/3 -left-6 w-16 h-16 chaos-scatter-4 underground-shadow">
+                  <img src="/punk-mural-girls.jpeg" alt="Punk mural girls" className="w-full h-full object-cover jagged-border opacity-70" />
+                </div>
+                <div className="absolute bottom-1/2 right-1/4 w-20 h-20 chaos-scatter-2 underground-shadow">
+                  <img src="/punk-red-rage-writing.jpeg" alt="Punk red rage writing" className="w-full h-full object-cover jagged-border opacity-65" />
+                </div>
 
                 {/* Punk floating icons */}
                 <div className="absolute top-1/2 -left-4 punk-sticker p-3 chaos-float">
