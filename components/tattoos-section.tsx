@@ -154,7 +154,7 @@ export function TattoosSection() {
               <div className="relative chaos-scatter-3 underground-shadow rebel-hover">
                 <div className="relative overflow-hidden jagged-border">
                   <img
-                    src="/images/tatto-artist.jpg"
+                    src="/tattoe-artist-arm.jpeg"
                     alt="Kaos Mayhem - Underground tattoo artist specializing in punk and grunge designs"
                     className="w-full h-auto object-cover chaos-scatter-1"
                   />
@@ -200,6 +200,17 @@ export function TattoosSection() {
                 {/* Floating chaotic elements around image */}
                 <div className="absolute -top-6 -left-6 w-24 h-24 spray-paint chaos-float"></div>
                 <div className="absolute -bottom-8 -right-8 w-32 h-32 spray-paint chaos-scatter-2"></div>
+
+                {/* Additional tattoo images as floating chaos elements */}
+                <div className="absolute -top-6 right-1/3 w-20 h-20 chaos-float underground-shadow">
+                  <img src="/punk-tattoes.jpeg" alt="Punk tattoos artwork" className="w-full h-full object-cover jagged-border opacity-80" />
+                </div>
+                <div className="absolute bottom-1/3 -right-8 w-18 h-18 chaos-scatter-3 underground-shadow">
+                  <img src="/tattoo-equipment.jpeg" alt="Tattoo equipment" className="w-full h-full object-cover jagged-border opacity-75" />
+                </div>
+                <div className="absolute top-1/4 -left-6 w-16 h-16 chaos-scatter-1 underground-shadow">
+                  <img src="/tattoo-equipment-two.jpeg" alt="Tattoo equipment setup" className="w-full h-full object-cover jagged-border opacity-70" />
+                </div>
 
                 {/* Punk floating icons */}
                 <div className="absolute top-1/2 -right-4 punk-sticker p-3 chaos-float">

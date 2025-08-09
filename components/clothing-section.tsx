@@ -176,7 +176,7 @@ export function ClothingSection() {
               <div className="relative chaos-scatter-3 underground-shadow rebel-hover">
                 <div className="relative overflow-hidden jagged-border">
                   <img
-                    src="/images/tatto-blue-hair.jpg"
+                    src="/leather-jacket.jpeg"
                     alt="Punk fashion model wearing underground designs by Kaos Mayhem and LSG - alternative style clothing"
                     className="w-full h-auto object-cover chaos-scatter-1"
                   />
@@ -222,6 +222,20 @@ export function ClothingSection() {
                 {/* Floating chaotic elements around image */}
                 <div className="absolute -top-6 -left-6 w-24 h-24 spray-paint chaos-float"></div>
                 <div className="absolute -bottom-8 -right-8 w-32 h-32 spray-paint chaos-scatter-2"></div>
+
+                {/* Additional fashion images as floating chaos elements */}
+                <div className="absolute -top-8 right-1/4 w-20 h-20 chaos-float underground-shadow">
+                  <img src="/punk-red-fur.jpeg" alt="Punk red fur fashion" className="w-full h-full object-cover jagged-border opacity-80" />
+                </div>
+                <div className="absolute bottom-1/3 -right-6 w-16 h-16 chaos-scatter-1 underground-shadow">
+                  <img src="/tweaker.jpeg" alt="Punk tweaker style" className="w-full h-full object-cover jagged-border opacity-75" />
+                </div>
+                <div className="absolute top-1/4 -left-8 w-18 h-18 chaos-scatter-4 underground-shadow">
+                  <img src="/punk-black-kilt.jpeg" alt="Punk black kilt fashion" className="w-full h-full object-cover jagged-border opacity-70" />
+                </div>
+                <div className="absolute bottom-1/2 right-8 w-14 h-14 chaos-scatter-3 underground-shadow">
+                  <img src="/punk-joker.jpeg" alt="Punk joker style" className="w-full h-full object-cover jagged-border opacity-65" />
+                </div>
 
                 {/* Punk floating icons */}
                 <div className="absolute top-1/2 -right-4 punk-sticker p-3 chaos-float">
